@@ -31,7 +31,7 @@ public class GrogodiiliScripti : MonoBehaviour
     {
         if(!dying)
         {
-            TimerScript.instance.currentTime -= Time.fixedDeltaTime * 2;
+            AudioManagerScript.instance.currentTime -= Time.fixedDeltaTime * 2;
 
         }
     }

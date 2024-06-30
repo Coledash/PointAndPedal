@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,13 +11,32 @@ public class AudioManagerScript : MonoBehaviour
     public AudioClip music;
     public bool playerDead = false;
     AudioSource myMusic;
+    public GameObject restartScreen;
+    public float timeSinceStart;
+    public float highScore;
+    public TMP_Text highScoreText;
+    public float startTime;
+    public float currentTime;
+    public TMP_Text timerText;
 
+    private void Start()
+    {
+        
+        currentTime = 0;
+        timerText.text = "Your score: " + currentTime.ToString();
+    }
     private void Awake()
     {
+
         if (instance == null)
         {
             instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         AudioSource audioSource = Instantiate(soundFXObject, transform.position, Quaternion.identity);
         audioSource.clip = music;
         audioSource.volume = 0.4f;
@@ -29,15 +49,32 @@ public class AudioManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        
         if (playerDead)
         {
             myMusic.Stop();
+            restartScreen.SetActive(true);
+            
+            if(GameManagerScript.instance.highScore < currentTime)
+            {
+                GameManagerScript.instance.highScore = currentTime;
+            }
+            //Debug.Log("Current time: " + currentTime);
+            //Debug.Log("GameManager high score: " + GameManagerScript.instance.highScore);
         }
-        
+
+        timeSinceStart += Time.deltaTime;
+
+        if (!playerDead)
+        {
+            currentTime += Time.deltaTime;
+            //currentTime = Mathf.RoundToInt(currentTime);
+            timerText.text = "Your score: " + Mathf.RoundToInt(currentTime).ToString();
+        }
+
+        highScoreText.text = "High score: " + Mathf.RoundToInt(GameManagerScript.instance.highScore).ToString();
+
+        //Debug.Log(timeSinceStart);
     }
 
     public void PlaySoundClip(AudioClip audioClip, Transform spawnTransform, float volume)

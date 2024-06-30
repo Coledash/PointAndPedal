@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3bbfc5f7fee1c24449a0eeafae4c4694, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,7 +152,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 181a5d2f4824421408c1b65198afcd77, type: 3}
   - {fileID: 8300000, guid: 59cec20463b2d764c8ec54ee95a747ee, type: 3}
   - {fileID: 8300000, guid: d770896a0d87f7041925896195f1634e, type: 3}
-  collectParticle: {fileID: 4132700616079660030, guid: 35724bc5b46e9ed49a41218e8b7e038a, type: 3}
   myParticle: {fileID: 8188123887289492832, guid: 35724bc5b46e9ed49a41218e8b7e038a, type: 3}
 --- !u!50 &702482846640333492
 Rigidbody2D:

@@ -15,18 +15,6 @@ public class ESScript : MonoBehaviour
 
     public GameObject myParticle;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         if (UnityEngine.Random.Range(0, 10000) < dieChance)
@@ -43,7 +31,7 @@ public class ESScript : MonoBehaviour
             transform.DetachChildren();
             //Transform.child
             AudioManagerScript.instance.PlayRandomSoundClip(dieSounds, transform, 1f);
-            TimerScript.instance.currentTime += scorePoints;
+            AudioManagerScript.instance.currentTime += scorePoints;
             collected = true;
             float x = UnityEngine.Random.Range(-moveForce * 5, moveForce * 5);
             float y = UnityEngine.Random.Range(moveForce, moveForce * 20);

@@ -6,6 +6,8 @@ public class ESSpawnerScript : MonoBehaviour
 {
     public GameObject SpawnPrefab;
     public int spawnChance;
+    public float whenToStartSpawning;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,10 @@ public class ESSpawnerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (UnityEngine.Random.Range(0, 10000) < spawnChance)
+        if (UnityEngine.Random.Range(0, 10000) < spawnChance && AudioManagerScript.instance.timeSinceStart > whenToStartSpawning)
         {
-            Instantiate(SpawnPrefab, transform);            
+            Instantiate(SpawnPrefab, transform);
+            if (AudioManagerScript.instance.playerDead) Destroy(gameObject);
         }
 
     }

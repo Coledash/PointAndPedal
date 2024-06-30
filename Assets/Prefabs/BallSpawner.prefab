@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPrefab: {fileID: 4855838675644445028, guid: a0c2c15dd883de14686559c5cfc43fd5, type: 3}
   spawnChance: 15
+  whenToStartSpawning: 15
