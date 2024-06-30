@@ -1,0 +1,45 @@
+Point & Pedal
+
+Pelaaja tasapainottelee polkupyörällä jäälaatan päällä. Pelikerran kesto noin 2 min?
+Jos pelaaja laittaa liikaa tai liian vähän vauhtia, pyörä kaatuu jääveteen ja pelaaja häviää.
+Pelaaja saa pisteitä mitä pitempään pysyy pystyssä.
+Pelin haaste tulee multitaskaamisesta, kun pelaajan pitää keskittyä pyörän pystyssä pitämiseen
+yhdellä kädellä ja toisella kädellä klikkaamaan objekteja maailmassa.
+Pelaaja ei klikkaa hiirellä ES, vaan pelkästään osoittaa kursorilla ES ja polkaisulla samalla myös aktivoidaan ES?
+
+Kenttä
+ - Puut
+ - Vesi
+
+Objektit
+ - ES tölkki
+ - Jää pelaajan alla
+
+Pelihahmot
+ - Pelaaja
+ - grogodiili :D
+
+UI
+ - Päävalikko
+ - Score
+ - Kursori
+
+ES tölkki
+ - Pelaaja kerää klikkaamalla.
+ - Perusversio antaa pelaajalle lisää aikaa eli isompi score
+ - Edistyneempi versio käyttää ES valuuttana kun käydään kauppaa grogodiilin :D kanssa
+ - Ilmestyy lisää kenttään, katoaa itsestään jos ei kerätä.
+
+Upgradet
+ - Painovoima, pelaaja kaatuu hitaammin tai nopeammin
+ - Voima, polkaisu nostaa enemmän tai vähemmän pyörää
+ - Lisäkerroin ES saantiin
+ - Aika scoretaulukossa kulkee nopeammin
+
+Grogodiili :D
+ - Perusversiossa tulee esiin ja pysäyttää ajan kulumisen, lähtee pois kun pelaaja klikkaa tarpeeksi.
+ - Edistyneempi versio tarjoaa pelaajalle diilejä kun pelaaja on kerännyt tarpeeksi ES.
+
+Lisäversiomahdolluuksia
+ - Jäälaattoja on useita, pelaaja voi vapaasti siirtyä niiden välillä, jäälaatat hajoaa hitaasti tai ES kerätään vain tietyillä laatoilla?
+ - Välissä kenttään ilmestyy kirves, joka muuttaa kursorin kirveeksi, voi hakata puita, puut toimii valuuttana majavalle
